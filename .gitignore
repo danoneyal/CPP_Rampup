@@ -1,0 +1,13 @@
+
+*.db
+*.ipch
+ThreadsMutexAndEvent/.vs/ThreadsMutexAndEvent/v17/.suo
+*.obj
+*.exe
+*.log
+*.tlog
+*.recipe
+*.ilk
+*.pdb
+*.idb
+ThreadsMutexAndEvent/x64/Debug/ThreadsMutexAndEvent.vcxproj.FileListAbsolute.txt
