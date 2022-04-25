@@ -1,0 +1,33 @@
+# depslib dependency file v1.0
+1650731407 source:d:\code\threadsandcommunication\server\main.cpp
+	<iostream>
+	<thread>
+	"Task.h"
+	"NetworkApp.h"
+
+1650697498 source:d:\code\threadsandcommunication\server\src\cthread.cpp
+	"CThread.h"
+
+1650698575 d:\code\threadsandcommunication\server\include\cthread.h
+
+1650730714 source:d:\code\threadsandcommunication\server\src\task.cpp
+	"Task.h"
+
+1650730714 d:\code\threadsandcommunication\server\include\task.h
+	<iostream>
+	<thread>
+	<mutex>
+
+1650729592 source:d:\code\threadsandcommunication\server\src\wallet.cpp
+	"Wallet.h"
+
+1650729592 d:\code\threadsandcommunication\server\include\wallet.h
+
+1650733024 source:d:\code\threadsandcommunication\server\src\networkapp.cpp
+	"NetworkApp.h"
+
+1650730714 d:\code\threadsandcommunication\server\include\networkapp.h
+	<iostream>
+	<thread>
+	<mutex>
+
