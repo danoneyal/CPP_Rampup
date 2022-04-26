@@ -39,7 +39,8 @@ int main()
         }
     }
     
-    cout << "money in the wallet : " << nMoney << endl;
+    cout << "my money in the wallet : " << nMoney << endl;
+
     return 0;
     
          

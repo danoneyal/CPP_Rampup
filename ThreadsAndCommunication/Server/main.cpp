@@ -3,7 +3,7 @@
 
 #include"Task.h"
 #include"NetworkApp.h"
-
+#include "include/Wallet.h"
 using namespace std;
 
 int main()
@@ -14,7 +14,7 @@ int main()
     thread th1 (&Task::ThreadFunction,p_Task,"Sample Task T1",6);
     thread th2 (&Task::ThreadFunction,p_Task,"Call T2",10);
 
-    th1.join();
+    th1.join(); //join the thread
     th2.join();
 
     cout<<"count :"<<p_Task->GetCount()<<endl;
@@ -26,6 +26,9 @@ int main()
     thread thread2(&NetworkApp::loadData,&app);
     thread1.join();
     thread2.join();
+
+    Wallet myWallet; 
+    
 
     return 0;
 }

@@ -11,3 +11,7 @@ ThreadsMutexAndEvent/.vs/ThreadsMutexAndEvent/v17/.suo
 *.pdb
 *.idb
 ThreadsMutexAndEvent/x64/Debug/ThreadsMutexAndEvent.vcxproj.FileListAbsolute.txt
+*.db-shm
+*.db-wal
+*.opendb
+*.sqlite
