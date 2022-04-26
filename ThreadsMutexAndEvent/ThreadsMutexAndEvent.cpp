@@ -28,7 +28,15 @@ int testMultiThreadWallet()
 
 int main()
 {
-    int length = 1000;
+
+    NetworkApp app;
+    thread thread1(&NetworkApp::mainTaskEvent, &app);
+    thread thread2(&NetworkApp::loadDataEvent, &app);
+    thread1.join();
+    thread2.join();
+    return 0; 
+
+    /*int length = 1000;
     int nMoney = 0;
     for (size_t i = 0; i < length; i++)
     {
@@ -42,7 +50,7 @@ int main()
     cout << "my money in the wallet : " << nMoney << endl;
 
     return 0;
-    
+    */
          
     
     /*cout << "Hello world!" << endl;

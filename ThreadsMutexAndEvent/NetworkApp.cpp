@@ -25,7 +25,6 @@ void NetworkApp::mainTask()
         std::this_thread::sleep_for(std::chrono::milliseconds(100));
         //cout<<".";
         m_mutex.lock();
-
     }
 
     m_mutex.unlock();
@@ -54,4 +53,46 @@ void NetworkApp::loadData()
     cout<<"T2-Finished loading the data"<<endl;
 
     //when the function ends the deconstructure of guard is called and unlock the mutex
+}
+
+
+void NetworkApp::mainTaskEvent()
+{ 
+    cout << "T1-handshake with the server-X" << endl;
+    
+    unique_lock<mutex> myLock(m_mutex);
+    
+    cout << "T1-wait for data to be loaded" << endl;
+    //wait for T2 to signal the event 
+    m_condVar.wait(myLock, std::bind(&NetworkApp::isDataLoaded, this));
+    
+    cout << "T1-processing";
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    cout << ".";
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    cout << ".";
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    cout << ".";
+    std::this_thread::sleep_for(std::chrono::milliseconds(500));
+    cout << "." << endl;
+
+}
+
+
+void NetworkApp::loadDataEvent()
+{
+    
+    cout << "T2-Loading data from XML" << endl;
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+
+    // Lock The Data structure
+    std::lock_guard<std::mutex> guard(m_mutex);
+    // Set the flag to true, means data is loaded
+    m_bDataLoaded = true;
+    cout << "T2-Finished loading the data" << endl;
+    //notify the conditional variable 
+    m_condVar.notify_one();
+
+    //when the function ends the deconstructure of guard is called and unlock the mutex
+
 }

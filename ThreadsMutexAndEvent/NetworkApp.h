@@ -16,6 +16,8 @@ using namespace std;
 #include<iostream>
 #include<thread>
 #include<mutex>
+#include<condition_variable>
+#include <functional>
 
 class NetworkApp
 {
@@ -24,12 +26,15 @@ class NetworkApp
         virtual ~NetworkApp();
         void mainTask();
         void loadData();
-
+        void mainTaskEvent();
+        void loadDataEvent();
+        bool isDataLoaded() { return m_bDataLoaded; }
     protected:
 
     private:
-    mutex m_mutex;
-    bool m_bDataLoaded ;
+        mutex m_mutex;
+        bool m_bDataLoaded ;            
+        condition_variable m_condVar;
 };
 
 #endif // NETWORKAPP_H
