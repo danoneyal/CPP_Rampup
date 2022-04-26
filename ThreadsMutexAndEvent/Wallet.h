@@ -2,6 +2,7 @@
 #define WALLET_H
 #include<mutex>
 
+
 class Wallet
 {
     public:
@@ -13,8 +14,8 @@ class Wallet
     private:
         int m_nMoney;
         std::mutex m_myMutex;
-    public:
-        void AddMoney(int nAmount);
+public:
+    void AddMoney(int nAmount);
         int GetMoney();
 };
 

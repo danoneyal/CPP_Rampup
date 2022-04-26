@@ -13,7 +13,7 @@ Wallet::~Wallet()
 
 
 void Wallet::AddMoney(int nAmount)
-{    
+{
     
     std::lock_guard<std::mutex> myLockGuard(m_myMutex);
     //m_myMutex.lock();
