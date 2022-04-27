@@ -15,3 +15,7 @@ ThreadsMutexAndEvent/x64/Debug/ThreadsMutexAndEvent.vcxproj.FileListAbsolute.txt
 *.db-wal
 *.opendb
 *.sqlite
+TemplateApp/.vs/TemplateApp/v17/.suo
+TemplateApp/TemplateApp/TemplateApp.vcxproj
+TemplateApp/TemplateApp/TemplateApp.vcxproj.filters
+TemplateApp/TemplateApp/TemplateApp.vcxproj.user
